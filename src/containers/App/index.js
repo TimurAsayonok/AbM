@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router';
+import NavLink from '../../components/NavLink';
 import './styles';
 
 class App extends Component {
@@ -7,8 +7,9 @@ class App extends Component {
     return (
       <div className='container'>
         <ul className='nav nav-pills'>
-          <li><Link to='/admin' activeClassName='active'>Admin</Link></li>
-          <li><Link to='/list' activeClassName='active'>List of Genre</Link></li>
+          <li><NavLink onlyActiveOnIndex={true} to='/'>Home</NavLink></li>
+          <li><NavLink to='/admin'>Admin</NavLink></li>
+          <li><NavLink to='/list'>List of Genre</NavLink></li>
         </ul>
         {/* добавили вывод потомков */}
         {this.props.children}
