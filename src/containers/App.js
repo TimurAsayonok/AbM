@@ -5,10 +5,9 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <h1>App</h1>
-        <ul>
+        <ul className='nav nav-pills'>
           <li><Link to='/admin'>Admin</Link></li>
-          <li><Link to='/genre'>Genre</Link></li>
+          <li><Link to='/list'>List of Genre</Link></li>
         </ul>
         {/* добавили вывод потомков */}
         {this.props.children}
