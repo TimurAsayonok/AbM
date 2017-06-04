@@ -8,6 +8,13 @@ class Admin extends Component {
       </div>
     )
   }
+
+  static onEnter(nextState, replace) {
+    const login = window.localStorage.getItem('site_login');
+    if(login !== 'admin'){
+      replace('/');
+    }
+  }
 }
 
 export default Admin
