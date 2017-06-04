@@ -10,7 +10,7 @@ class App extends Component {
           <li><NavLink onlyActiveOnIndex={true} to='/'>Home</NavLink></li>
           <li><NavLink to='/admin'>Admin</NavLink></li>
           <li><NavLink to='/list'>List of Genre</NavLink></li>
-          <li><NavLink to='/login'>Войти</NavLink></li>
+          <li><NavLink to='/login'>Login</NavLink></li>
         </ul>
         {/* добавили вывод потомков */}
         {this.props.children}
