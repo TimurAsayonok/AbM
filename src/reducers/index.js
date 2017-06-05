@@ -3,4 +3,4 @@ import user from './user'
 
 export const rootReducers = combineReducers({
   user
-})
+});
