@@ -9,11 +9,8 @@ class Admin extends Component {
     )
   }
 
-  static onEnter(nextState, replace) {
-    const login = window.localStorage.getItem('site_login');
-    if(login !== 'admin'){
-      replace('/');
-    }
+  static onEnter() {
+
   }
 }
 

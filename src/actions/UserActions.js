@@ -1,14 +1,39 @@
 import {
-  // LOGIN_REQUEST,
+  LOGIN_REQUEST,
   // LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS
 } from '../constants/User'
 
+import {
+  ROUTING
+} from '../constants/Routing'
+
 export function login(data) {
-  console.log(data);
-  return {
-    type: LOGIN_SUCCESS
+  return (dispatch) => {
+    console.log(data);
+
+    dispatch({
+      type: LOGIN_REQUEST
+    });
+
+    setTimeout(() => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: {
+          name: data.name,
+          isAuthenticated: true
+        }
+      })
+      //after login success go to middleware and doing redirect to another page
+      dispatch({
+        type: ROUTING,
+        payload: {
+          method: 'push', //или, например, replace
+          nextUrl: '/admin'
+        }
+      })
+    }, 2000);
   }
 }
 

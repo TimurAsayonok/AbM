@@ -10,11 +10,11 @@ const initialState = JSON.parse(window.localStorage.getItem('site_login')) || {}
 function UserState(state = initialState, action){
   switch (action.type) {
     case LOGIN_REQUEST:
-      //TODO
-      break;
+      console.log('LOGIN_REQUEST');
+      return {...state}
     case LOGIN_SUCCESS:
-      //TODO
-      break;
+      console.log('LOGIN_SUCCESS');
+      return {...state, name: action.payload.name, isAuthenticated: action.payload.isAuthenticated}
     case LOGIN_ERROR:
       //TODO
       break;
