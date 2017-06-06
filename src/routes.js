@@ -10,11 +10,13 @@ import Home from './components/Home'
 import NotFound from './components/NotFound'
 import LoginPage from './components/LoginPage'
 
+import requireAuthentication from './containers/AuthenticatedComponent'
+
 export const routes = (
   <div>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path='/admin' component={Admin} onEnter={Admin.onEnter}/>//added hucks
+      <Route path='/admin' component={requireAuthentication(Admin)} />
       <Route path='/genre/:genre' component={Genre}>
         <Route path='/genre/:genre/:release' component={Release} />
       </Route>

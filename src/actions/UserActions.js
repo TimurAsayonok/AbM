@@ -29,7 +29,7 @@ export function login(data) {
       dispatch({
         type: ROUTING,
         payload: {
-          method: 'push', //или, например, replace
+          method: 'replace', //или, например, replace
           nextUrl: '/admin'
         }
       })
