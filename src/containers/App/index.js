@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import NavLink from '../../components/NavLink';
+import { connect } from 'react-redux'
 import './styles';
 
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className='container'>
         <ul className='nav nav-pills'>
@@ -19,4 +21,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return{
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(App);
