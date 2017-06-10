@@ -2,8 +2,9 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
 import App from './containers/App'
+import List from './containers/ListGenre'
+
 import Admin from './components/Admin'
-import List from './components/List'
 import Genre from './components/Genre'
 import Release from './components/Release'
 import Home from './components/Home'
