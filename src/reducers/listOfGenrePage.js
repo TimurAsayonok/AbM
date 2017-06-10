@@ -3,7 +3,10 @@ import {
   GET_PHOTO_SUCCESS
 } from '../constants/Photo'
 
-const initialState = {}
+const initialState = {
+  year: '2016',
+  photos: []
+}
 
 function ListOfGenrePageState(state = initialState, action){
   switch (action.type) {
@@ -13,6 +16,9 @@ function ListOfGenrePageState(state = initialState, action){
     case GET_PHOTO_SUCCESS:
       console.log('GET_PHOTO_SUCCESS');
       return {...state}
+    case 'SET_YEAR':
+      console.log('SET_YEAR');
+      return {...state, year: action.payload}
     default:
       return state;
   }
