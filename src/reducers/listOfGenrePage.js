@@ -1,6 +1,7 @@
 import {
   GET_PHOTO_REQUEST,
-  GET_PHOTO_SUCCESS
+  GET_PHOTO_SUCCESS,
+  SET_YEAR
 } from '../constants/Photo'
 
 const initialState = {
@@ -16,7 +17,7 @@ function ListOfGenrePageState(state = initialState, action){
     case GET_PHOTO_SUCCESS:
       console.log('GET_PHOTO_SUCCESS');
       return {...state}
-    case 'SET_YEAR':
+    case SET_YEAR:
       console.log('SET_YEAR');
       return {...state, year: action.payload}
     default:
