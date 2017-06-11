@@ -7,10 +7,10 @@ import * as listActions from '../../actions/ListOfGenreActions';
 class ListGenre extends Component {
   render() {
     const { listOfGenre } = this.props;
-    const { setYear } =this.props.listActions;
+    const { getPhotos } =this.props.listActions;
     console.log(this.props);
     return (
-      <ListOfGenre listOfGenre={listOfGenre} setYear={setYear}/>
+      <ListOfGenre listOfGenre={listOfGenre} getPhotos={getPhotos}/>
     )
   }
 }

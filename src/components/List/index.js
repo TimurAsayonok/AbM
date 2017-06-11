@@ -3,14 +3,14 @@ import React, { Component } from 'react'
 
 class List extends Component {
   onYearBtnClick(e) {
-    const { setYear } = this.props;
+    const { getPhotos } = this.props;
     console.log(e.target.innerText);
-    setYear(e.target.innerText);
+    getPhotos(e.target.innerText);
   }
 
   render() {
     console.log(this.props);
-    const { year, photos } = this.props.listOfGenre;
+    const { year, photos, fetching } = this.props.listOfGenre;
 
     return (
       <div className='row'>
@@ -21,7 +21,12 @@ class List extends Component {
             <button onClick={this.onYearBtnClick.bind(this)}>2015</button>
             <button onClick={this.onYearBtnClick.bind(this)}>2014</button>
           </div>
-          <p>You have {photos.length} photos </p>
+          {
+            fetching ?
+            <p>Loading ...</p>
+            :
+            <p>You have {photos.length} photos </p>
+          }
         </div>
       </div>
     )
